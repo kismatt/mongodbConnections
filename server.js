@@ -13,7 +13,7 @@ var authroute=require('./controller/auth');
 var userRoute=require('./controller/user');
 
 var registerRoute=require('./controller/register');
-// console.log('data',registerRoute)
+ console.log('data',registerRoute)
 
 
 // var file=require('./file.js');
