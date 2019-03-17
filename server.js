@@ -1,45 +1,32 @@
-var express=require('express');
-var app=express();
-var bodyParser=require('body-parser');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+
+var authroute = require('./controller/auth');
+var userRoute = require('./controller/user');
+var registerRoute = require('./controller/register');
+
+
 app.use(bodyParser.urlencoded({ extended: true }))
- 
 app.use(bodyParser.json())
-
-
-
-
-var authroute=require('./controller/auth');
-
-var userRoute=require('./controller/user');
-
-var registerRoute=require('./controller/register');
- console.log('data',registerRoute)
-
+console.log('data', registerRoute)
 
 // var file=require('./file.js');
 // console.log('this is our file:',file);
 
-
-
-
-app.use('/auth',authroute);
-app.use('/user',userRoute);
-app.use('/register',registerRoute);
-
-
-
-
-
+app.use('/auth', authroute);
+app.use('/user', userRoute);
+app.use('/register', registerRoute);
 
 //error handling middleware
-app.use('/',authroute,function(err,req,res,next){
-   if(err){
-       res.json({
-           message:err,
-           status:400,
-           data:'bad request'
-       })
-   }
+app.use('/', authroute, function (err, req, res, next) {
+    if (err) {
+        res.json({
+            message: err,
+            status: 400,
+            data: 'bad request'
+        })
+    }
 })
 
 
@@ -65,13 +52,13 @@ app.use('/',authroute,function(err,req,res,next){
 //             res.end('success in reading file'+done);
 //         }
 //     });
-    
+
 // })
-app.listen(4000,'localhost',function(err,done){
-    if(err){
+app.listen(4000, 'localhost', function (err, done) {
+    if (err) {
         console.log('server listening failer');
     }
-    else{
+    else {
         console.log('server is listening at port 4000');
 
     }
