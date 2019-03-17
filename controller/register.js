@@ -21,6 +21,7 @@ router.post('/', function (req, res, next) {
         firstname: req.body.firstname,
         email: req.body.email,
         password:req.body.password
+    
     })
 
 
