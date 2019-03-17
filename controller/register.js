@@ -19,7 +19,6 @@ router.post('/', function (req, res, next) {
     res.json({
         message: 'Hi from post request',
         firstname: req.body.firstname,
-        lastname: req.body.lastname,
         email: req.body.email,
         password:req.body.password
     })
