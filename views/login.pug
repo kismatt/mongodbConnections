@@ -5,7 +5,7 @@ html
     body
         h2= message
         p= p
-        form(action="/user" method="POST").form-group
+        form( action="/auth/login" method="POST").form-group
             input(type="text" placeholder="email" name="email").form-control
             br
             br

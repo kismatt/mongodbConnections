@@ -4,15 +4,19 @@ html
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
     body
         h2= message
-        p
-        form(action="/register" method="POST").form-group
-            input(type="text" placeholder="Firstname" name="email").form-control
+        p= p
+        form(action="/auth/register" method="POST").form-group
+            input(type="text" placeholder="Firstname" name="firstname").form-control
             br
+            br
+            input(type="password" placeholder="lastname" name="lastname").form-control
             br
             input(type="text" placeholder="email" name="email").form-control
             br
             br
-            input(type="password" placeholder="password" name="password").form-control
+            input(type="text" placeholder="password" name="password").form-control
+            br
+            input(type="text" placeholder="password" name="role").form-control
             br
             input(type="submit" value="Register")
             
